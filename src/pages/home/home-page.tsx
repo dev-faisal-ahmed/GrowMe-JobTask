@@ -1,10 +1,11 @@
-import { Box, Button, Container, TextField, Typography, useMediaQuery } from "@mui/material";
+import { Alert, Box, Button, Container, Snackbar, TextField, Typography, useMediaQuery } from "@mui/material";
 import { styleData } from "../../data/style-data";
 import { grey } from "@mui/material/colors";
 import { FormEvent } from "react";
 import { UserType } from "../../utils/types";
 import { setUserToLocal } from "../../utils/helper";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../../hooks/use-app-context";
 
 type InputType = HTMLFormElement & {
   name: { value: string };
@@ -16,6 +17,7 @@ export default function Home() {
   const { spacing } = styleData;
   const sm = useMediaQuery("(max-width:600px)");
   const path = useNavigate();
+  const { notify, offNotify } = useAppContext();
 
   function handleSubmission(event: FormEvent) {
     event.preventDefault();
@@ -79,6 +81,13 @@ export default function Home() {
           </Button>
         </Box>
       </Box>
+
+      {/* alert if user is not logged in */}
+      <Snackbar open={notify} autoHideDuration={4000} onClose={offNotify}>
+        <Alert onClose={offNotify} severity="error">
+          Please Update Your Information First
+        </Alert>
+      </Snackbar>
     </Container>
   );
 }

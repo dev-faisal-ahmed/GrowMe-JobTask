@@ -1,12 +1,17 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { Loading } from "../components/loading";
-const Home = lazy(() => import("../pages/home/home"));
+const HomePage = lazy(() => import("../pages/home/home-page"));
+const PostPage = lazy(() => import("../pages/post/post-page"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <HomePage />,
+  },
+  {
+    path: "/post",
+    element: <PostPage />,
   },
 ]);
 
