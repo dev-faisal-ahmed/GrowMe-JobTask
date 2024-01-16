@@ -10,3 +10,8 @@ export interface PostType {
   title: string;
   body: string;
 }
+
+export interface DeptType {
+  department: string;
+  sub_departments: string[];
+}

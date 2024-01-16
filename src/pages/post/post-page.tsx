@@ -2,6 +2,8 @@ import { Container } from "@mui/material";
 import { getUserFromLocal } from "../../utils/helper";
 import { Navigate } from "react-router-dom";
 import { useAppContext } from "../../hooks/use-app-context";
+import { PostTable } from "./post-table";
+import { Departments } from "./deprtments/departments";
 
 export default function PostPage() {
   const user = getUserFromLocal();
@@ -12,5 +14,10 @@ export default function PostPage() {
     return <Navigate to={"/"} />;
   }
 
-  return <Container>hi this is post</Container>;
+  return (
+    <Container sx={{ mt: 3 }}>
+      <PostTable />
+      <Departments />
+    </Container>
+  );
 }
