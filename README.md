@@ -2,6 +2,6 @@
 
 ## Technology Used
 
--- React
--- TypeScript
--- MUI
+- React
+- TypeScript
+- MUI
