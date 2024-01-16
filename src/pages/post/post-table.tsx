@@ -37,7 +37,6 @@ export function PostTable() {
       field: "body",
       headerName: "Body",
       width: 350,
-      resizable: true,
     },
   ];
   return (
@@ -50,7 +49,7 @@ export function PostTable() {
         columns={columns}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 10 },
+            paginationModel: { page: 0, pageSize: 5 },
           },
         }}
         pageSizeOptions={[5, 20]}

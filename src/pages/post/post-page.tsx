@@ -3,7 +3,7 @@ import { getUserFromLocal } from "../../utils/helper";
 import { Navigate } from "react-router-dom";
 import { useAppContext } from "../../hooks/use-app-context";
 import { PostTable } from "./post-table";
-import { Departments } from "./deprtments/departments";
+import { Departments } from "./departments/departments";
 
 export default function PostPage() {
   const user = getUserFromLocal();
